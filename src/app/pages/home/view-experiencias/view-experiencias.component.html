@@ -1,1 +1,29 @@
-<p>view-experiencias works!</p>
+<div class="bootstrap-wrapper">
+  <div class="col lg12">
+    <h2>Experiencia</h2>
+    <div class="row mt-xs-20">
+      <div class="col mt-xs-20">
+        <img
+          *ngFor="let exp of experiencias"
+          src="{{ exp.imagen }}"
+          class="img-fluid rounded-start"
+          class="logos"
+          alt="..."
+        />
+      </div>
+      <div class="col-10" *ngFor="let exp of experiencias">
+        <p class="card-text">{{exp.cargo}}</p>
+        <p class="card-text">
+          {{exp.empresa}} <br>
+          {{exp.inicio}} - {{exp.fin}} <br>
+          {{exp.direccion}} <br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt20">
+    <button type="button" class="btn btn-primary">Agregar</button>
+    </div>
+</div>
+
+

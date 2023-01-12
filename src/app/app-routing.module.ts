@@ -8,6 +8,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewProyectosComponent } from './pages/home/view-proyectos/view-proyectos.component';
+import { ViewExperienciasComponent } from './pages/home/view-experiencias/view-experiencias.component';
+import { ViewEducacionesComponent } from './pages/home/view-educacion/view-educaciones.component';
+import { ViewSkillsComponent } from './pages/home/view-skills/view-skills.component';
+import { AddExperienciaComponent } from './pages/admin/add-experiencia/add-experiencia.component';
 
 const routes: Routes = [
   {
@@ -29,7 +33,29 @@ const routes: Routes = [
     path:'admin',
     component:DashboardComponent,
     pathMatch:'full',
-    canActivate:[AdminGuard]
+    canActivate:[AdminGuard],
+    children:[
+      {
+        path:'experiencias',
+        component:ViewExperienciasComponent
+      }
+    ]
+  },
+  {
+    path:'home',
+    component:HomeComponent,
+    pathMatch:'full',
+    canActivate:[NormalGuard],
+    children:[
+      {
+        path:'experiencias',
+        component:ViewExperienciasComponent
+      },
+      {
+        path: 'add-experiencia',
+        component: AddExperienciaComponent
+      }
+    ]
   },
   {
     path:'user-dashboard',
@@ -40,7 +66,19 @@ const routes: Routes = [
   {
     path:'proyectos',
     component:ViewProyectosComponent
-  }
+  },
+  {
+    path:'experiencias',
+    component:ViewExperienciasComponent
+  },
+  {
+    path:'educaciones',
+    component:ViewEducacionesComponent
+  },
+  {
+    path:'skills',
+    component:ViewSkillsComponent
+  },
 ];
 
 @NgModule({
