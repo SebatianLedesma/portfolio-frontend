@@ -1,1 +1,39 @@
-<p>view-educaciones works!</p>
+<div class="container">
+    <div class="card">
+      <div class="card-header">Educación</div>
+      <div class="card-body row" *ngFor="let edu of educaciones">
+        <div class="col-2">
+          <img
+            src="{{ edu.imagen }}"
+            class="img-fluid rounded-start"
+            class="logos"
+            alt="..."
+          />
+        </div>
+        <div class="col-8">
+          <h5 class="card-title">{{ edu.titulo }}</h5>
+          <p class="card-text">
+            {{ edu.institucion }} <br />
+            {{ edu.inicio }} - {{ edu.fin }}<br />
+            {{ edu.puntaje }}
+          </p>
+        </div>
+        <div class="col-2 text-right mt20">
+          <button 
+          *ngIf="isLoggedIn"
+          type="button" 
+          class="btn btn-primary">Editar
+          </button>
+        </div>
+  
+        <hr size="2px" color="black" />
+      </div>
+      <div class="container text-center mt20">
+        <button 
+        *ngIf="isLoggedIn"
+        [routerLink]="'add-experiencia'"
+        type="button" 
+        class="btn btn-primary">Agregar</button>
+      </div>
+    </div>
+  </div>

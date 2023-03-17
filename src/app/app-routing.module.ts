@@ -12,6 +12,7 @@ import { ViewExperienciasComponent } from './pages/home/view-experiencias/view-e
 import { ViewEducacionesComponent } from './pages/home/view-educacion/view-educaciones.component';
 import { ViewSkillsComponent } from './pages/home/view-skills/view-skills.component';
 import { AddExperienciaComponent } from './pages/admin/add-experiencia/add-experiencia.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -30,14 +31,26 @@ const routes: Routes = [
     pathMatch : 'full'
   },
   {
+    path: 'add-experiencia',
+    component: AddExperienciaComponent
+  },
+  {
     path:'admin',
     component:DashboardComponent,
     pathMatch:'full',
     canActivate:[AdminGuard],
     children:[
       {
+        path:'profile',
+        component:ProfileComponent
+      },
+      {
         path:'experiencias',
         component:ViewExperienciasComponent
+      },
+      {
+        path: 'add-experiencia',
+        component: AddExperienciaComponent
       }
     ]
   },
@@ -66,10 +79,6 @@ const routes: Routes = [
   {
     path:'proyectos',
     component:ViewProyectosComponent
-  },
-  {
-    path:'experiencias',
-    component:ViewExperienciasComponent
   },
   {
     path:'educaciones',

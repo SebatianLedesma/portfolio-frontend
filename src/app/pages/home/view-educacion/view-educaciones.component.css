@@ -1,0 +1,14 @@
+img {
+    max-width: 100%;
+    width: 80px;
+  }
+
+@media only screen and (max-width: 480px) {
+    img {
+      width: 100%;
+    }
+  }
+#experiencia{
+  border: 1px solid #1E679A;
+  
+}

@@ -29,6 +29,7 @@ import { AddExperienciaComponent } from './pages/admin/add-experiencia/add-exper
 import { AddSkillComponent } from './pages/admin/add-skill/add-skill.component';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule, MatGridTile, MatGridTileText} from '@angular/material/grid-list';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { MatGridListModule, MatGridTile, MatGridTileText} from '@angular/materia
     ViewExperienciasComponent,
     AddProyectoComponent,
     AddExperienciaComponent,
-    AddSkillComponent
+    AddSkillComponent,
+    ProfileComponent
     
     
     

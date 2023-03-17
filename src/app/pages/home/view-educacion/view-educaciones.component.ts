@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { EducacionService } from 'src/app/services/educacion.service';
+import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-view-educaciones',
@@ -7,9 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewEducacionesComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn = false;
+  user:any = null;  
+
+  educaciones:any=[
+  ]
+
+  constructor(private educacionService:EducacionService, public login:LoginService ) { 
+    
+  }
 
   ngOnInit(): void {
+    this.educacionService.listarEducaciones().subscribe(
+      (dato:any)=>{
+        this.educaciones=dato;
+       console.log(this.educaciones);
+      },
+      (error)=>{
+        console.log(error);
+        Swal.fire('Error !!' , 'Error al cargar educacion', 'error');
+      }
+    ),
+    this.isLoggedIn = this.login.isLoggedIn();
+    this.user = this.login.getUser();
+    this.login.loginStatusSubjec.asObservable().subscribe(
+      data => {
+        this.isLoggedIn = this.login.isLoggedIn();
+        this.user = this.login.getUser();
+      }
+    )
+  }
+  public logout(){
+    this.login.logout();
+    window.location.reload();
   }
 
 }
