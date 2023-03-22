@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card">
-      <div class="card-header">Educación</div>
+      <div class="card-header"><h2>Educación</h2></div>
       <div class="card-body row" *ngFor="let edu of educaciones">
         <div class="col-2">
           <img
@@ -11,7 +11,7 @@
           />
         </div>
         <div class="col-8">
-          <h5 class="card-title">{{ edu.titulo }}</h5>
+          <h3 class="card-title">{{ edu.titulo }}</h3>
           <p class="card-text">
             {{ edu.institucion }} <br />
             {{ edu.inicio }} - {{ edu.fin }}<br />

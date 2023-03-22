@@ -12,8 +12,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class ViewExperienciasComponent implements OnInit {
 
   isLoggedIn = false;
-  user:any = null;
-  
+  user:any = null;  
 
   experiencias:any=[
   ]

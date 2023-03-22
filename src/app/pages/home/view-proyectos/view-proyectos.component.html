@@ -1,1 +1,30 @@
-<p>view-proyectos works!</p>
+<div class="container">
+    <div class="card">
+      <div class="card-header"><h2>Proyectos</h2></div>
+      <div class="card-body row" *ngFor="let pro of proyectos">
+        <div class="col-8">
+          <h3 class="card-title">{{ pro.nombre }}</h3>
+          <p class="card-text">
+            {{ pro.descripcion }}
+        
+          </p>
+        </div>
+        <div class="col-2 text-right mt20">
+          <button 
+          *ngIf="isLoggedIn"
+          type="button" 
+          class="btn btn-primary">Editar
+          </button>
+        </div>
+  
+        <hr size="2px" color="black" />
+      </div>
+      <div class="container text-center mt20">
+        <button 
+        *ngIf="isLoggedIn"
+        [routerLink]="'add-experiencia'"
+        type="button" 
+        class="btn btn-primary">Agregar</button>
+      </div>
+    </div>
+  </div>
