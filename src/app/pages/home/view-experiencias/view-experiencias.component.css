@@ -1,3 +1,6 @@
+#experienciasBlock{
+  padding-bottom: 10px;
+}
 img {
     max-width: 100%;
     width: 80px;
@@ -11,4 +14,7 @@ img {
 #experiencia{
   border: 1px solid #1E679A;
   
+}
+#agregar{
+  padding-bottom: 10px;
 }

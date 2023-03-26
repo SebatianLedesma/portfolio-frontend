@@ -30,6 +30,11 @@ import { AddSkillComponent } from './pages/admin/add-skill/add-skill.component';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule, MatGridTile, MatGridTileText} from '@angular/material/grid-list';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
+import { SocialComponent } from './components/social/social.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { UpdateExperienciaComponent } from './pages/admin/update-experiencia/update-experiencia.component';
 
 
 @NgModule({
@@ -49,7 +54,12 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AddProyectoComponent,
     AddExperienciaComponent,
     AddSkillComponent,
-    ProfileComponent
+    ProfileComponent,
+    LogoAPComponent,
+    SocialComponent,
+    BannerComponent,
+    AcercaDeComponent,
+    UpdateExperienciaComponent
     
     
     

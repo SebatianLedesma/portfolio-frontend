@@ -1,0 +1,9 @@
+img{     
+    width: 30px;
+    padding: 4px;
+
+}
+
+#social li{
+    display: inline-flex;
+}

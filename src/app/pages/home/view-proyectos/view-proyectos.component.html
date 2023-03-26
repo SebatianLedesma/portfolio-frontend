@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="proyectosBlock">
     <div class="card">
       <div class="card-header"><h2>Proyectos</h2></div>
       <div class="card-body row" *ngFor="let pro of proyectos">
@@ -19,7 +19,7 @@
   
         <hr size="2px" color="black" />
       </div>
-      <div class="container text-center mt20">
+      <div class="container text-center mt20" id="agregar">
         <button 
         *ngIf="isLoggedIn"
         [routerLink]="'add-experiencia'"

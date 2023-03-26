@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="educacionesBlock">
     <div class="card">
       <div class="card-header"><h2>Educación</h2></div>
       <div class="card-body row" *ngFor="let edu of educaciones">
@@ -28,11 +28,11 @@
   
         <hr size="2px" color="black" />
       </div>
-      <div class="container text-center mt20">
+      <div class="container text-center mt20" id="agregar">
         <button 
         *ngIf="isLoggedIn"
         [routerLink]="'add-experiencia'"
-        type="button" 
+        type="button"         
         class="btn btn-primary">Agregar</button>
       </div>
     </div>
