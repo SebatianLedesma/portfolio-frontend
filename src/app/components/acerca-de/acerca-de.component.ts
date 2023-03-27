@@ -21,29 +21,6 @@ export class AcercaDeComponent implements OnInit {
     
   }
 
-  ngOnInit(): void {
-    this.userService.listarUsuarios().subscribe(
-      (dato:any)=>{
-        this.usuarios=dato;
-       console.log(this.usuarios);
-      },
-      (error)=>{
-        console.log(error);
-        Swal.fire('Error !!' , 'Error al cargar usuarios', 'error');
-      }
-    ),
-    this.isLoggedIn = this.login.isLoggedIn();
-    this.user = this.login.getUser();
-    this.login.loginStatusSubjec.asObservable().subscribe(
-      data => {
-        this.isLoggedIn = this.login.isLoggedIn();
-        this.user = this.login.getUser();
-      }
-    )
+  ngOnInit(){
   }
-  public logout(){
-    this.login.logout();
-    window.location.reload();
-  }
-
 }

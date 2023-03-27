@@ -1,54 +1,27 @@
 <div class="container">
-<div class="row">
+  <div class="row">
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-  <img src="../../../assets/perfil.png" 
-  class="img-fluid rounded-circle"
-  alt="" 
-  id="fotoPerfil"/>  
-</div>
-  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <p id="nombre">Sebastian Ledesma</p>
-    <p>Full Stack Developer Jr</p>
-  </div>
-  <div>
-    <span>
-      <h2>Acerca de</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus
-        totam, nulla eius consectetur optio nesciunt earum ratione dolorem
-        laudantium necessitatibus nisi provident ducimus laborum. Numquam
-        necessitatibus placeat unde laboriosam.
-      </p>
-    </span>
-  </div>
-</div>
-</div>
-
-<div class="container" id="proyectosBlock">
-  <div class="card">
-    <div class="card-header"><h2>Acerca de</h2></div>
-    <div class="card-body row" *ngFor="let usu of usuarios">
-      <div class="col-8">
-        
-        <p class="card-text">
-          {{ usu.acercade }}
-      
-        </p>
-      </div>
-      <div class="col-2 text-right mt20">
-        <button 
-        *ngIf="isLoggedIn"
-        type="button" 
-        class="btn btn-primary">Editar
-        </button>
-      </div>      
+      <img
+        src="../../../assets/perfil.png"
+        class="img-fluid rounded-circle"
+        alt=""
+        id="fotoPerfil"
+      />
     </div>
-    <div class="container text-center mt20" id="agregar">
-      <button 
-      *ngIf="isLoggedIn"
-      [routerLink]="'add-experiencia'"
-      type="button" 
-      class="btn btn-primary">Agregar</button>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+      <p id="nombre">Sebastian Ledesma</p>
+      <p>Full Stack Developer Jr</p>
+    </div>
+    <div>
+      <span>
+        <h2>Acerca de</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus
+          totam, nulla eius consectetur optio nesciunt earum ratione dolorem
+          laudantium necessitatibus nisi provident ducimus laborum. Numquam
+          necessitatibus placeat unde laboriosam.
+        </p>
+      </span>
     </div>
   </div>
 </div>

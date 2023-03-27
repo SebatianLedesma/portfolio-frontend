@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { Experiencia } from 'src/app/Models/Experiencia';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 @Component({

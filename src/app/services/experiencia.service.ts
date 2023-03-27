@@ -7,41 +7,37 @@ import baseUrl from './helper';
 @Injectable({
   providedIn: 'root'
 })
-export class ExperienciaService {  
+export class ExperienciaService {   
 
   constructor(private http:HttpClient) { }
 
+  //Metodo para cargar experiencias.
+  
   public listarExperiencias(){
     return this.http.get(`${baseUrl}/experiencia/`);
   }
 
-  public detalleExperiencia(id:number):Observable<Object>{
-  return  this.http.delete<Experiencia>(`${baseUrl}/experiencia/${id}`);  
-  }
-
-  //Metodo para obtener usuarios.
-
-  obtenerListaDeExperiencias():Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>(`${baseUrl}`);
+  public detalleExperiencia(id:number):Observable<Experiencia>{
+    return  this.http.delete<Experiencia>(`${baseUrl}/experiencia/${id}`);  
   }
 
   //Metodo para agregar Experiencia.
-  agregarExperiencia(experiencia:Experiencia) : Observable<Object>{
-    return this.http.post(`${baseUrl}`,experiencia)
+  public agregarExperiencia(experiencia:any){
+    return this.http.post(`${baseUrl}/experiencia/`, experiencia);
   }
 
   //Metodo para actualizar Experiencia
-  actualizarExperiencia(id:number, experiencia:Experiencia) : Observable<Object>{
+  public actualizarExperiencia(id:number, experiencia:Experiencia) : Observable<Object>{
     return this.http.put(`${baseUrl}/${id}`,experiencia);
   }
 
   //Metodo para obtener o buscar Experiencia.
-  obtenerExperienciaPorId(id:number) : Observable<Experiencia>{
+  public obtenerExperienciaPorId(id:number) : Observable<Experiencia>{
     return this.http.get<Experiencia>(`${baseUrl}/${id}`);
   }
     
   //Metodo para eliminar Experiencia.
-  eliminarUsuario(id:number) : Observable<Object>{
-    return this.http.delete<Experiencia>(`${baseUrl}/${id}`);
+  public eliminarExperiencia(experienciaId:any){
+    return this.http.delete(`${baseUrl}/experiencia/${experienciaId}`);
   }
 }

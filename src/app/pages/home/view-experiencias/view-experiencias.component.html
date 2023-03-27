@@ -1,6 +1,7 @@
 <div class="container" id="experienciasBlock">
   <div class="card">
     <div class="card-header"><h2>Experiencia</h2></div>
+
     <div class="card-body row" *ngFor="let exp of experiencias">
       <div class="col-2">
         <img
@@ -18,17 +19,20 @@
           {{ exp.direccion }}
         </p>
       </div>
+
       <div class="col-2 text-right mt20">
         <button 
         *ngIf="isLoggedIn"
-        routerLink="/update-experiencia"
+        routerLink="/experiencia/{{exp.id}}"       
         type="button" 
         class="btn btn-primary">Editar
         </button>
       </div>
+
       <div class="col-2 text-right mt20">
         <button 
         *ngIf="isLoggedIn"
+        (click)= "eliminarExperiencia(exp.id)"
         type="button" 
         class="btn btn-danger">Borrar
         </button>
@@ -39,7 +43,7 @@
     <div class="container text-center mt20" id="agregar">
       <button 
       *ngIf="isLoggedIn"
-      routerLink="/add-experiencia"
+      (click)="agregarExperiencia()"      
       type="button" 
       class="btn btn-primary">Agregar</button>
     </div>
