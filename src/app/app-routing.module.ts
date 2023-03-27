@@ -15,6 +15,7 @@ import { AddExperienciaComponent } from './pages/admin/add-experiencia/add-exper
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpdateExperienciaComponent } from './pages/admin/update-experiencia/update-experiencia.component';
 import { AddProyectoComponent } from './pages/admin/add-proyecto/add-proyecto.component';
+import { AddSkillComponent } from './pages/admin/add-skill/add-skill.component';
 
 const routes: Routes = [
   {
@@ -41,9 +42,16 @@ const routes: Routes = [
     component: AddProyectoComponent
   },
   {
+    path: 'add-skill',
+    component: AddSkillComponent
+  },
+  {
     path: 'update-experiencia',
     component: UpdateExperienciaComponent
-
+  },
+  {
+    path: 'update-proyecto',
+    component: UpdateExperienciaComponent
   },
   {
     path:'admin',

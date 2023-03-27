@@ -41,6 +41,20 @@ export class ViewSkillsComponent implements OnInit {
       }
     )
   }
+
+  eliminarSkill(skillId:any){    
+    this.skillService.eliminarSkill(skillId).subscribe(
+      (data) => {
+        this.skills = this.skills.filter((skill:any) => skill.id != skillId);
+        Swal.fire('Skill eliminada', 'La Skill ha sido eliminada con exito', 'success')
+      },
+      (error) => {
+        Swal.fire('error', 'Error al eliminar la skill', 'error');
+      }
+    )  
+  }
+
+
   public logout(){
     this.login.logout();
     window.location.reload();
