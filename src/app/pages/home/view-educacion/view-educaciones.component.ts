@@ -41,6 +41,19 @@ export class ViewEducacionesComponent implements OnInit {
       }
     )
   }
+
+  eliminarEducacion(educacionId:any){    
+    this.educacionService.eliminarEducacion(educacionId).subscribe(
+      (data) => {
+        this.educaciones = this.educaciones.filter((educacion:any) => educacion.id != educacionId);
+        Swal.fire('Educacion eliminada', 'La educacion ha sido eliminada con exito', 'success')
+      },
+      (error) => {
+        Swal.fire('error', 'Error al eliminar la educacion', 'error');
+      }
+    )  
+  }
+
   public logout(){
     this.login.logout();
     window.location.reload();

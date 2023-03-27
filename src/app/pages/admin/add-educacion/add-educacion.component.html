@@ -1,1 +1,102 @@
-<p>add-educacion works!</p>
+<h1 class="text-center">Agregar educacion</h1>
+<div class="container">
+  <form (ngSubmit)= "formSubmit()">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input
+            required
+            autofocus
+            type="text"
+            name="institucion"
+            matInput            
+            class="form-control"
+            [(ngModel)]="educacion.institucion"
+            placeholder="Institucion"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-outline">
+          <input            
+            type="text"
+            name="titulo"
+            matInput
+            id="form6Example2"
+            class="form-control"
+            [(ngModel)]="educacion.titulo"
+            placeholder="Titulo obtenido"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="imagen"
+        matInput
+        id="form6Example3"
+        class="form-control"
+        [(ngModel)]="educacion.imagen"
+        placeholder="Link de la imagen"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="carrera"
+        matInput
+        id="form6Example4"
+        class="form-control"
+        [(ngModel)]="educacion.carrera"
+        placeholder="Carrera"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="date"
+        name="inicio"
+        matInput
+        id="form6Example5"
+        class="form-control"
+        [(ngModel)]="educacion.inicio"
+        placeholder="Fecha de inicio"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="date"
+        name="fin"
+        matInput
+        id="form6Example6"
+        class="form-control"
+        [(ngModel)]="educacion.fin"
+        placeholder="Fecha de finalización"
+      />
+    </div> 
+    
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="puntaje"
+        matInput
+        id="form6Example6"
+        class="form-control"
+        [(ngModel)]="educacion.puntaje"
+        placeholder="Promedio obtenido"
+      />
+    </div>    
+
+    <div class="text-center">
+    <button mat-raised-button type="submit" class="btn btn-primary btn-block mb-4">
+      Agregar
+    </button>
+    </div>
+
+  </form>
+</div>
