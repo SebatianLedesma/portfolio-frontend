@@ -14,6 +14,7 @@ import { ViewSkillsComponent } from './pages/home/view-skills/view-skills.compon
 import { AddExperienciaComponent } from './pages/admin/add-experiencia/add-experiencia.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpdateExperienciaComponent } from './pages/admin/update-experiencia/update-experiencia.component';
+import { AddProyectoComponent } from './pages/admin/add-proyecto/add-proyecto.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'add-experiencia',
     component: AddExperienciaComponent
+  },
+  {
+    path: 'add-proyecto',
+    component: AddProyectoComponent
   },
   {
     path: 'update-experiencia',
@@ -59,6 +64,10 @@ const routes: Routes = [
         component: AddExperienciaComponent
       },
       {
+        path: 'add-proyecto',
+        component: AddProyectoComponent
+      },
+      {
         path: 'update-experiencia',
        component: UpdateExperienciaComponent
       }
@@ -77,7 +86,7 @@ const routes: Routes = [
       {
         path: 'add-experiencia',
         component: AddExperienciaComponent
-      }
+      },
     ]
   },
   {

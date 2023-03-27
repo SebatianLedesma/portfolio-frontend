@@ -1,1 +1,54 @@
-<p>add-proyecto works!</p>
+<h1 class="text-center">Agregar proyecto</h1>
+<div class="container">
+  <form (ngSubmit)= "formSubmit()">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input
+            required
+            autofocus
+            type="text"
+            name="nombre"
+            matInput            
+            class="form-control"
+            [(ngModel)]="proyecto.nombre"
+            placeholder="Nombre del proyecto"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-outline">
+          <input            
+            type="text"
+            name="descripcion"
+            matInput
+            id="form6Example2"
+            class="form-control"
+            [(ngModel)]="proyecto.descripcion"
+            placeholder="Descripción"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="url"
+        matInput
+        id="form6Example3"
+        class="form-control"
+        [(ngModel)]="proyecto.url"
+        placeholder="Link del proyecto"
+      />
+    </div>      
+
+    <div class="text-center">
+    <button mat-raised-button type="submit" class="btn btn-primary btn-block mb-4">
+      Agregar
+    </button>
+  </div>
+  </form>
+</div>
+

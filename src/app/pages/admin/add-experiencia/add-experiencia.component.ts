@@ -36,7 +36,6 @@ export class AddExperienciaComponent implements OnInit {
 
     this.experienciaService.agregarExperiencia(this.experiencia).subscribe(
       (dato:any) => {
-
         Swal.fire('Categoria agregada','La experiencia se guardó con exito','success');
         this.router.navigate(['/'])
       },
