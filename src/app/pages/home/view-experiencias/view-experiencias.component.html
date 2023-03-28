@@ -20,14 +20,15 @@
         </p>
       </div>
 
-      <div class="col-2 text-right mt20">
+     <div class="col-2 text-right mt20">
         <button 
         *ngIf="isLoggedIn"
-        routerLink="/experiencia/{{exp.id}}"       
+        [routerLink]="'/experiencia/'+ exp.id"       
         type="button" 
         class="btn btn-primary">Editar
         </button>
       </div>
+    
 
       <div class="col-2 text-right mt20">
         <button 

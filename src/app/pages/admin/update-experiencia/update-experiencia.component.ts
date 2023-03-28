@@ -1,39 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
-import { Experiencia } from 'src/app/Models/Experiencia';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 
+import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
+import { MatCardXlImage } from '@angular/material/card';
 
 @Component({
   selector: 'app-update-experiencia',
   templateUrl: './update-experiencia.component.html',
-  styleUrls: ['./update-experiencia.component.css']
+  styleUrls: ['./update-experiencia.component.css'],
 })
 export class UpdateExperienciaComponent implements OnInit {
+  experienciaId: any = 0;
+  experiencia: any;
+  id: number;
 
-  id:number;
-  experiencia:Experiencia= new Experiencia();
-
-  constructor(private experienciaService:ExperienciaService,private router:Router,private route:ActivatedRoute) { }
+  constructor(
+    private experienciaService: ExperienciaService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.experienciaService.obtenerExperienciaPorId(this.id).subscribe(dato =>{
-      this.experiencia = dato;
-    });
+    this.experienciaId = this.route.snapshot.params['experienciaId'];
+    this.experienciaService
+      .obtenerExperienciaPorId(this.experienciaId)
+      .subscribe(
+        (dato: any) => {
+          this.experiencia = dato;
+          console.log(this.experiencia);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
-  irALaListaDeExperiencias(){
-    this.router.navigate(['/experiencias']);
-    alert(`La empresa ${this.experiencia.empresa} ha sido actualizada con exito`);
-    
+  public actualizarDatosExperiencia() {
+    this.experienciaService.actualizarExperiencia(this.experiencia).subscribe(
+      (dato) => {
+        Swal.fire(
+          'Experiencia actualizada',
+          'La experiencia ha sido actualidada exitosamente',
+          'success'
+        ).then(
+          (e) => {
+          this.router.navigate(['/experiencias']);
+        }
+        );
+      },
+      (error) => {
+        Swal.fire(
+          'Error al actualizar',
+          'La experiencia no ha sido actualizada correctamente',
+          'error'
+        );
+        console.log(error);
+      }
+    );
   }
-
-  onSubmit(){
-    this.experienciaService.actualizarExperiencia(this.id,this.experiencia).subscribe(dato => {
-      this.irALaListaDeExperiencias();
-    });
-  }
-
 }

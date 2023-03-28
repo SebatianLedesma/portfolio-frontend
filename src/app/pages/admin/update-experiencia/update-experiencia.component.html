@@ -1,164 +1,178 @@
 <div class="col-md-6 offset-md-3">
-    <h3 class="text-center">Edición de Experiencias</h3>
-    <form (ngSubmit)= "onSubmit()" #experienciaForm = "ngForm">
-      <div class="form-group">
-        <label>Empresa : </label>
-        <input type = "text"
+  <h3 class="text-center">Edición de Experiencias</h3>
+  <form *ngIf="experiencia" (submit)="actualizarDatosExperiencia()">
+    <div class="form-group">
+      <label>Empresa : </label>
+      <input
+        [(ngModel)]="experiencia.empresa"
+        type="text"
         class="form-control"
-        id = "empresa"
-        ngModel = "experiencia.empresa"
-        name = "empresa"
+        name="empresa"
         required
         minlength="4"
         maxlength="50"
         placeholder="Digite la empresa "
-        #empresa = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="empresa.invalid && (empresa.dirty || empresa.touched)">
-          <div *ngIf="empresa.errors!['required']">
-            Digite la empresa por favor
-          </div>
-          <div *ngIf="empresa.errors!['minlength']">
-            El nombre tiene que contener como mínimo 4 caracteres
-          </div>
-          <div *ngIf="empresa.errors!['maxlength']">
-            El nombre tiene que tener como maximo 50 caracteres
-          </div>
+        #empresa="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="empresa.invalid && (empresa.dirty || empresa.touched)"
+      >
+        <div *ngIf="empresa.errors!['required']">
+          Digite la empresa por favor
+        </div>
+        <div *ngIf="empresa.errors!['minlength']">
+          El nombre tiene que contener como mínimo 4 caracteres
+        </div>
+        <div *ngIf="empresa.errors!['maxlength']">
+          El nombre tiene que tener como maximo 50 caracteres
         </div>
       </div>
-  
-      <div class="form-group">
-        <label>Cargo: </label>
-        <input type = "text"
+    </div>
+
+    <div class="form-group">
+      <label>Cargo: </label>
+      <input
+        [(ngModel)]="experiencia.cargo"
+        type="text"
         class="form-control"
-        id = "cargo"
-        [(ngModel)] = "experiencia.cargo"
-        name = "cargo"
+        name="cargo"
         required
         minlength="4"
         maxlength="30"
         placeholder="Digite su cargo "
-        #cargo = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="cargo.invalid && (cargo.dirty || cargo.touched)">
-          <div *ngIf="cargo.errors!['required']">
-            Digite su cargo por favor
-          </div>
-          <div *ngIf="cargo.errors!['minlength']">
-            El cargo tiene que contener como mínimo 4 caracteres
-          </div>
-          <div *ngIf="cargo.errors!['maxlength']">
-            El cargo tiene que tener como maximo 30 caracteres
-          </div>
+        #cargo="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="cargo.invalid && (cargo.dirty || cargo.touched)"
+      >
+        <div *ngIf="cargo.errors!['required']">Digite su cargo por favor</div>
+        <div *ngIf="cargo.errors!['minlength']">
+          El cargo tiene que contener como mínimo 4 caracteres
+        </div>
+        <div *ngIf="cargo.errors!['maxlength']">
+          El cargo tiene que tener como maximo 30 caracteres
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label>Domicilio: </label>
-        <input type = "text"
+    <div class="form-group">
+      <label>Domicilio: </label>
+      <input
+        [(ngModel)]="experiencia.direccion"
+        type="text"
         class="form-control"
-        id = "apellidoM"
-        [(ngModel)] = "experiencia.direccion"
-        name = "direccion"
+        name="direccion"
         required
         minlength="8"
         maxlength="30"
         placeholder="Digite el domicilio "
-        #direccion = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
-          <div *ngIf="direccion.errors!['required']">
-            Digite el domicilio por favor.
-          </div>
-          <div *ngIf="direccion.errors!['minlength']">
-            El domicilio debe contener como mínimo 8 caracteres
-          </div>
-          <div *ngIf="direccion.errors!['maxlength']">
-            El apellido debe contener como maximo 30 caracteres
-          </div>
+        #direccion="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)"
+      >
+        <div *ngIf="direccion.errors!['required']">
+          Digite el domicilio por favor.
+        </div>
+        <div *ngIf="direccion.errors!['minlength']">
+          El domicilio debe contener como mínimo 8 caracteres
+        </div>
+        <div *ngIf="direccion.errors!['maxlength']">
+          El apellido debe contener como maximo 30 caracteres
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label>Inicio : </label>
-        <input type = "date"
+    <div class="form-group">
+      <label>Inicio : </label>
+      <input
+        [(ngModel)]="experiencia.inicio"
+        type="date"
         class="form-control"
-        id = "inicio"
-        [(ngModel)] = "experiencia.inicio"
-        name = "inicio"
+        name="inicio"
         required
         minlength="10"
         maxlength="10"
         placeholder="Digite la fecha de innicio "
-        #inicio = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="inicio.invalid && (inicio.dirty || inicio.touched)">
-          <div *ngIf="inicio.errors!['required']">
-            Digite su fecha de inicio por favor
-          </div>
-          <div *ngIf="inicio.errors!['minlength']">
-            La fecha debe contener como minímo 10 caracteres
-          </div>
-          <div *ngIf="inicio.errors!['maxlength']">
-            debe contener como maximo 10 caracteres
-          </div>
+        #inicio="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="inicio.invalid && (inicio.dirty || inicio.touched)"
+      >
+        <div *ngIf="inicio.errors!['required']">
+          Digite su fecha de inicio por favor
+        </div>
+        <div *ngIf="inicio.errors!['minlength']">
+          La fecha debe contener como minímo 10 caracteres
+        </div>
+        <div *ngIf="inicio.errors!['maxlength']">
+          debe contener como maximo 10 caracteres
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label>Fin : </label>
-        <input type = "date"
+    <div class="form-group">
+      <label>Fin : </label>
+      <input
+        [(ngModel)]="experiencia.fin"
+        type="date"
         class="form-control"
-        id = "fin"
-        [(ngModel)] = "experiencia.fin"
-        name = "fin"
+        name="fin"
         required
         minlength="10"
         maxlength="10"
         placeholder="Digite la finalizacion "
-        #fin = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="fin.invalid && (fin.dirty || fin.touched)">
-          <div *ngIf="fin.errors!['required']">
-            Digite fecha de finalizacion por favor
-          </div>
-          <div *ngIf="fin.errors!['minlength']">
-            La fecha debe contener como mínimo 10 caracteres
-          </div>
-          <div *ngIf="fin.errors!['maxlength']">
-            El telefono tiene que tener como máximo 10 caracteres
-          </div>
+        #fin="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="fin.invalid && (fin.dirty || fin.touched)"
+      >
+        <div *ngIf="fin.errors!['required']">
+          Digite fecha de finalizacion por favor
+        </div>
+        <div *ngIf="fin.errors!['minlength']">
+          La fecha debe contener como mínimo 10 caracteres
+        </div>
+        <div *ngIf="fin.errors!['maxlength']">
+          El telefono tiene que tener como máximo 10 caracteres
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label>Imagen : </label>
-        <input type = "text"
+    <div class="form-group">
+      <label>Imagen : </label>
+      <input
+        [(ngModel)]="experiencia.imagen"
+        type="text"
         class="form-control"
-        id = "sanciones"
-        [(ngModel)] = "experiencia.imagen"
-        name = "imagen"
+        name="imagen"
         required
         minlength="10"
         maxlength="100"
         placeholder="Ingrese la URL de la imagen "
-        #imagen = "ngModel"
-        >
-        <div class="alert alert-danger" *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)">
-          <div *ngIf="imagen.errors!['required']">
-            Ingrese la URL de la imagen por favor
-          </div>
-          <div *ngIf="imagen.errors!['minlength']">
-            La URL debe contener como mínimo 10 caracteres
-          </div>
-          <div *ngIf="imagen.errors!['maxlength']">
-            La URL debe contener como máximo 100 caracteres
-          </div>
+        #imagen="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)"
+      >
+        <div *ngIf="imagen.errors!['required']">
+          Ingrese la URL de la imagen por favor
+        </div>
+        <div *ngIf="imagen.errors!['minlength']">
+          La URL debe contener como mínimo 10 caracteres
+        </div>
+        <div *ngIf="imagen.errors!['maxlength']">
+          La URL debe contener como máximo 100 caracteres
         </div>
       </div>
-      
-    
-  
-      <button class="btn btn-success" [disabled]= "!experienciaForm.form.valid">Guardar</button>
-    </form>
-  </div>
+    </div>
+
+    <button class="btn btn-success">Guardar</button>
+  </form>
+</div>

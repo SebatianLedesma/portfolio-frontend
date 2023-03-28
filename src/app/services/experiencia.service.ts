@@ -27,13 +27,13 @@ export class ExperienciaService {
   }
 
   //Metodo para actualizar Experiencia
-  public actualizarExperiencia(id:number, experiencia:Experiencia) : Observable<Object>{
-    return this.http.put(`${baseUrl}/${id}`,experiencia);
+  public actualizarExperiencia(experiencia:any){
+    return this.http.put(`${baseUrl}/experiencia/`, experiencia);
   }
 
   //Metodo para obtener o buscar Experiencia.
-  public obtenerExperienciaPorId(id:number) : Observable<Experiencia>{
-    return this.http.get<Experiencia>(`${baseUrl}/${id}`);
+  public obtenerExperienciaPorId(experienciaId:any){
+    return this.http.get(`${baseUrl}/experiencia/${experienciaId}`);
   }
     
   //Metodo para eliminar Experiencia.

@@ -51,11 +51,15 @@ const routes: Routes = [
     component: AddEducacionComponent
   },
   {
-    path: 'update-experiencia',
+    path:'experiencias',
+    component:ViewExperienciasComponent
+  },
+  {
+    path: 'experiencia/:experienciaId',
     component: UpdateExperienciaComponent
   },
   {
-    path: 'update-proyecto',
+    path: 'proyecto/:proyectoId',
     component: UpdateExperienciaComponent
   },
   {
