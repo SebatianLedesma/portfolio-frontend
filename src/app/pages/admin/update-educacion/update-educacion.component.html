@@ -1,0 +1,160 @@
+<h1 class="text-center">Editar educación</h1>
+<div class="container">
+  <form *ngIf="educacion" (submit)="actualizarDatosEducacion()">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input
+            autofocus
+            type="text"
+            name="institucion"
+            matInput
+            class="form-control"
+            [(ngModel)]="educacion.institucion"
+            placeholder="Institucion"
+            required
+            minlength="3"
+            maxlength="40"
+            #institucion="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="
+              institucion.invalid && (institucion.dirty || institucion.touched)
+            "
+          >
+            <div *ngIf="institucion.errors!['required']">
+              Debe ingredar una institucion
+            </div>
+            <div *ngIf="institucion.errors!['minlength']">
+              Este campo debe contener como minímo 3 caracteres
+            </div>
+            <div *ngIf="institucion.errors!['maxlength']">
+              debe contener como maximo 40 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-outline">
+          <input
+            type="text"
+            name="titulo"
+            matInput
+            id="form6Example2"
+            class="form-control"
+            [(ngModel)]="educacion.titulo"
+            placeholder="Titulo obtenido"
+            required
+            minlength="3"
+            maxlength="50"
+            #titulo="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)"
+          >
+            <div *ngIf="titulo.errors!['required']">
+              Debe ingresar el titulo
+            </div>
+            <div *ngIf="titulo.errors!['minlength']">
+              El titulo tiene que contener como mínimo 3 caracteres
+            </div>
+            <div *ngIf="titulo.errors!['maxlength']">
+              El titulo tiene que tener como maximo 50 caracteres
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="carrera"
+        matInput
+        id="form6Example4"
+        class="form-control"
+        [(ngModel)]="educacion.carrera"
+        placeholder="Carrera"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="date"
+        name="inicio"
+        matInput
+        id="form6Example5"
+        class="form-control"
+        [(ngModel)]="educacion.inicio"
+        placeholder="Fecha de inicio"
+        required
+        minlength="10"
+        maxlength="10"
+        #inicio="ngModel"
+      /> 
+      <div
+            class="alert alert-danger"
+            *ngIf="inicio.invalid && (inicio.dirty || inicio.touched)"
+          >
+            <div *ngIf="inicio.errors!['required']">
+              Debe ingresar una fecha de inicio
+            </div>
+            <div *ngIf="inicio.errors!['minlength']">
+              La fecha debe contener 10 caracteres "dd/mm/aaaa"
+            </div>
+            <div *ngIf="inicio.errors!['maxlength']">
+              La fecha debe contener 10 caracteres "dd/mm/aaaa"
+            </div>
+          </div>     
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="date"
+        name="fin"
+        matInput
+        id="form6Example6"
+        class="form-control"
+        [(ngModel)]="educacion.fin"
+        placeholder="Fecha de finalización"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="puntaje"
+        matInput
+        id="form6Example6"
+        class="form-control"
+        [(ngModel)]="educacion.puntaje"
+        placeholder="Promedio obtenido"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        name="imagen"
+        matInput
+        id="form6Example3"
+        class="form-control"
+        [(ngModel)]="educacion.imagen"
+        placeholder="Link de la imagen"
+      />
+    </div>
+
+    <div class="text-center">
+      <button
+        mat-raised-button
+        type="submit"
+        class="btn btn-primary btn-block mb-4"
+      >
+        Editar
+      </button>
+    </div>
+  </form>
+</div>

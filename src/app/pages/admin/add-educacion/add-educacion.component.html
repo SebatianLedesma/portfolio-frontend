@@ -12,8 +12,25 @@
             matInput            
             class="form-control"
             [(ngModel)]="educacion.institucion"
+            minlength="4"
+            maxlength="50"            
             placeholder="Institucion"
+            #institucion="ngModel"
           />
+          <div
+        class="alert alert-danger"
+        *ngIf="institucion.invalid && (institucion.dirty || institucion.touched)"
+      >
+        <div *ngIf="institucion.errors!['required']">
+          Digite fecha de institucion por favor
+        </div>
+        <div *ngIf="institucion.errors!['minlength']">
+          La institucion debe contener como mínimo 3 caracteres
+        </div>
+        <div *ngIf="institucion.errors!['maxlength']">
+          La institucion debe contener como máximo 10 caracteres
+        </div>
+      </div>
         </div>
       </div>
 

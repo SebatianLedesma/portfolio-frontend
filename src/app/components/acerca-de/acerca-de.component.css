@@ -2,7 +2,6 @@
     padding: 20px;
 }
 
-
 /*Estilo foto perfil*/
 
 @media (min-width: 576px){
@@ -12,7 +11,7 @@
         border-radius: 100% ;
         box-shadow: 3px 3px 3px gray;
         left: 5%;
-        top: 240px;
+        top: 210px;
     }  
 }
 @media (max-width: 575px){

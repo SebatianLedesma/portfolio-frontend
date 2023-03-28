@@ -17,6 +17,9 @@ import { UpdateExperienciaComponent } from './pages/admin/update-experiencia/upd
 import { AddProyectoComponent } from './pages/admin/add-proyecto/add-proyecto.component';
 import { AddSkillComponent } from './pages/admin/add-skill/add-skill.component';
 import { AddEducacionComponent } from './pages/admin/add-educacion/add-educacion.component';
+import { UpdateEducacionComponent } from './pages/admin/update-educacion/update-educacion.component';
+import { UpdateSkillComponent } from './pages/admin/update-skill/update-skill.component';
+import { UpdateProyectoComponent } from './pages/admin/update-proyecto/update-proyecto.component';
 
 const routes: Routes = [
   {
@@ -60,7 +63,15 @@ const routes: Routes = [
   },
   {
     path: 'proyecto/:proyectoId',
-    component: UpdateExperienciaComponent
+    component: UpdateProyectoComponent
+  },
+  {
+    path: 'educacion/:educacionId',
+    component: UpdateEducacionComponent
+  },
+  {
+    path: 'skill/:skillId',
+    component: UpdateSkillComponent
   },
   {
     path:'admin',

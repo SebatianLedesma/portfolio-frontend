@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
-
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { MatCardXlImage } from '@angular/material/card';
 
 @Component({
   selector: 'app-update-experiencia',
@@ -33,7 +31,7 @@ export class UpdateExperienciaComponent implements OnInit {
         (error) => {
           console.log(error);
         }
-      );
+      );   
   }
 
   public actualizarDatosExperiencia() {
@@ -43,11 +41,9 @@ export class UpdateExperienciaComponent implements OnInit {
           'Experiencia actualizada',
           'La experiencia ha sido actualidada exitosamente',
           'success'
-        ).then(
-          (e) => {
-          this.router.navigate(['/experiencias']);
-        }
-        );
+        ).then((e) => {
+          this.router.navigate(['/']);
+        });
       },
       (error) => {
         Swal.fire(

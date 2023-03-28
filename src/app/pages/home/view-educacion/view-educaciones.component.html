@@ -11,17 +11,21 @@
           />
         </div>
         <div class="col-6">
-          <h3 class="card-title">{{ edu.titulo }}</h3>
+          <h3 class="card-title fw-bold">{{ edu.titulo }}</h3>
           <p class="card-text">
-            {{ edu.institucion }} <br />
-            {{ edu.inicio }} - {{ edu.fin }}<br />
-            {{ edu.puntaje }}
+            {{ edu.institucion }} <br/>
+            Promedio: {{ edu.puntaje }} <br>
+            {{ edu.inicio }} - {{ edu.fin }} 
           </p>
+                 
+            
+          
         </div>
 
        <div class="col-2 text-right mt20">
           <button 
           *ngIf="isLoggedIn"
+          [routerLink]="'/educacion/'+ edu.id"
           type="button" 
           class="btn btn-primary">Editar
           </button>

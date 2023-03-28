@@ -8,14 +8,15 @@
           src="{{ exp.imagen }}"
           class="img-fluid rounded-start"
           class="logos"
-          alt="..."
+          alt="Logo de la empresa"
         />
       </div>
       <div class="col-6">
-        <h3 class="card-title">{{ exp.cargo }}</h3>
+        <h3 class="card-title fw-bold">{{ exp.cargo }}</h3>        
         <p class="card-text">
-          {{ exp.empresa }} <br />
-          {{ exp.inicio }} - {{ exp.fin }}<br />
+          {{ exp.empresa }}
+          <br/>
+          {{ exp.inicio }} - {{ exp.fin }}<br/>
           {{ exp.direccion }}
         </p>
       </div>
@@ -27,8 +28,7 @@
         type="button" 
         class="btn btn-primary">Editar
         </button>
-      </div>
-    
+      </div>    
 
       <div class="col-2 text-right mt20">
         <button 
@@ -38,8 +38,8 @@
         class="btn btn-danger">Borrar
         </button>
       </div>
-
       <hr size="2px" color="black" />
+      
     </div>
     <div class="container text-center mt20" id="agregar">
       <button 

@@ -36,6 +36,9 @@ import { BannerComponent } from './components/banner/banner.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { UpdateExperienciaComponent } from './pages/admin/update-experiencia/update-experiencia.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { UpdateEducacionComponent } from './pages/admin/update-educacion/update-educacion.component';
+import { UpdateSkillComponent } from './pages/admin/update-skill/update-skill.component';
+import { UpdateProyectoComponent } from './pages/admin/update-proyecto/update-proyecto.component';
 
 
 @NgModule({
@@ -61,7 +64,10 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
     BannerComponent,
     AcercaDeComponent,
     UpdateExperienciaComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    UpdateEducacionComponent,
+    UpdateSkillComponent,
+    UpdateProyectoComponent
     
     
     

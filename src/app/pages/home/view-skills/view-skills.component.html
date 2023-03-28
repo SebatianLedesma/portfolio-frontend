@@ -4,7 +4,7 @@
     <div class="card-body row" *ngFor="let ski of skills">
       <div class="col-2"></div>
       <div class="col-6">
-        <h5 class="card-title text-center">{{ ski.nombre }}</h5>
+        <h4 class="card-title text-center fw-bold">{{ ski.nombre }}</h4>
 
         <div class="progress">
           <div
@@ -23,6 +23,7 @@
      <div class="col-2 text-right mt20">
         <button 
         *ngIf="isLoggedIn" 
+        [routerLink]="'/skill/'+ ski.id"
         type="button" 
         class="btn btn-primary"
         >Editar

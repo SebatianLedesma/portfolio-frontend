@@ -38,7 +38,7 @@
         class="form-control"
         name="cargo"
         required
-        minlength="4"
+        minlength="3"
         maxlength="30"
         placeholder="Digite su cargo "
         #cargo="ngModel"
@@ -69,21 +69,7 @@
         maxlength="30"
         placeholder="Digite el domicilio "
         #direccion="ngModel"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)"
-      >
-        <div *ngIf="direccion.errors!['required']">
-          Digite el domicilio por favor.
-        </div>
-        <div *ngIf="direccion.errors!['minlength']">
-          El domicilio debe contener como mínimo 8 caracteres
-        </div>
-        <div *ngIf="direccion.errors!['maxlength']">
-          El apellido debe contener como maximo 30 caracteres
-        </div>
-      </div>
+      />      
     </div>
 
     <div class="form-group">
@@ -127,21 +113,7 @@
         maxlength="10"
         placeholder="Digite la finalizacion "
         #fin="ngModel"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="fin.invalid && (fin.dirty || fin.touched)"
-      >
-        <div *ngIf="fin.errors!['required']">
-          Digite fecha de finalizacion por favor
-        </div>
-        <div *ngIf="fin.errors!['minlength']">
-          La fecha debe contener como mínimo 10 caracteres
-        </div>
-        <div *ngIf="fin.errors!['maxlength']">
-          El telefono tiene que tener como máximo 10 caracteres
-        </div>
-      </div>
+      />      
     </div>
 
     <div class="form-group">
@@ -156,21 +128,7 @@
         maxlength="100"
         placeholder="Ingrese la URL de la imagen "
         #imagen="ngModel"
-      />
-      <div
-        class="alert alert-danger"
-        *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)"
-      >
-        <div *ngIf="imagen.errors!['required']">
-          Ingrese la URL de la imagen por favor
-        </div>
-        <div *ngIf="imagen.errors!['minlength']">
-          La URL debe contener como mínimo 10 caracteres
-        </div>
-        <div *ngIf="imagen.errors!['maxlength']">
-          La URL debe contener como máximo 100 caracteres
-        </div>
-      </div>
+      />      
     </div>
 
     <button class="btn btn-success">Guardar</button>
