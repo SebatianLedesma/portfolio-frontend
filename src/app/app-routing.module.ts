@@ -51,7 +51,7 @@ const routes: Routes = [
     component: AddEducacionComponent
   },
   {
-    path:'experiencias',
+    path:'experiencia',
     component:ViewExperienciasComponent
   },
   {
@@ -71,23 +71,8 @@ const routes: Routes = [
       {
         path:'profile',
         component:ProfileComponent
-      },
-      {
-        path:'experiencias',
-        component:ViewExperienciasComponent
-      },
-      {
-        path: 'add-experiencia',
-        component: AddExperienciaComponent
-      },
-      {
-        path: 'add-proyecto',
-        component: AddProyectoComponent
-      },
-      {
-        path: 'update-experiencia',
-       component: UpdateExperienciaComponent
-      }
+      },     
+
     ]
   },
   {
@@ -96,14 +81,7 @@ const routes: Routes = [
     pathMatch:'full',
     canActivate:[NormalGuard],
     children:[
-      {
-        path:'experiencias',
-        component:ViewExperienciasComponent
-      },
-      {
-        path: 'add-experiencia',
-        component: AddExperienciaComponent
-      },
+
     ]
   },
   {
@@ -111,19 +89,8 @@ const routes: Routes = [
     component:UserDashboardComponent,
     pathMatch:'full',
     canActivate:[NormalGuard]
-  },
-  {
-    path:'proyectos',
-    component:ViewProyectosComponent
-  },
-  {
-    path:'educaciones',
-    component:ViewEducacionesComponent
-  },
-  {
-    path:'skills',
-    component:ViewSkillsComponent
-  },
+  }, 
+
 ];
 
 @NgModule({

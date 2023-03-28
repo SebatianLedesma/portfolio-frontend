@@ -65,7 +65,7 @@ export class ViewProyectosComponent implements OnInit {
     this.router.navigate(['update-proyecto',id])
   }
   agregarProyecto(){
-    this.router.navigate(['/add-proyecto'])
+    this.router.navigate(['/add-proyecto/'])
   }
 
 }

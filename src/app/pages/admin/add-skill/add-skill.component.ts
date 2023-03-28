@@ -22,8 +22,14 @@ export class AddSkillComponent implements OnInit {
   } 
   
   formSubmit(){
-    if(this.skill.nombre.trim() == ' ' || this.skill.nombre == null){
+    if(this.skill.nombre.trim() == '' || this.skill.nombre == null){
       this.snack.open("El nombre es requerido!",'',{
+        duration:3000
+      })
+      return ; 
+    }
+    if(this.skill.porcentaje.trim() == '' || this.skill.porcentaje == null){
+      this.snack.open("El porcentaje es requerido!",'',{
         duration:3000
       })
       return ; 

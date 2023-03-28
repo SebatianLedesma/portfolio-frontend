@@ -27,11 +27,20 @@ export class AddExperienciaComponent implements OnInit {
   } 
   
   formSubmit(){
-    if(this.experiencia.empresa.trim() == ' ' || this.experiencia.empresa == null){
+    if(this.experiencia.empresa.trim() == '' || this.experiencia.empresa == null){
       this.snack.open("La empresa es requerida!",'',{
         duration:3000
       })
       return ; 
+    }
+    if(this.experiencia.cargo.trim() == '' || this.experiencia.cargo == null){
+      this.snack.open("El cargo es requerido!",'',{
+        duration:3000
+      })
+      return ; 
+    }
+    if(this.experiencia.imagen.trim() == '' || this.experiencia.imagen == null){
+      this.experiencia.imagen = "../../../../assets/experienciaDefault.png";
     }
 
     this.experienciaService.agregarExperiencia(this.experiencia).subscribe(

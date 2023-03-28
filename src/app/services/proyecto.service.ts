@@ -13,27 +13,23 @@ export class ProyectoService {
 
   constructor(private http:HttpClient) { }
   
+  //Metodo para cargar lista de proyectos.
   public listarProyectos(){
     return this.http.get(`${baseUrl}/proyecto/`);
-  }   
-  
-
-  public detalleProyecto(proyectoId:number):Observable<Proyecto>{
-    return  this.http.delete<Proyecto>(`${baseUrl}/proyecto/${proyectoId}`);  
   }
-
+  //Metodo para agregar proyecto.
   public agregarProyecto(proyecto:any){
     return this.http.post(`${baseUrl}/proyecto/`, proyecto);
   }
-
-  public actualizarProyecto(proyectoId:number, proyecto:Proyecto) : Observable<Object>{
-    return this.http.put(`${baseUrl}/${proyectoId}`,proyecto);
+  //Metodo para actualizar proyecto
+  public actualizarProyecto(proyecto:any){
+    return this.http.put(`${baseUrl}/proyecto}`,proyecto);
   }
- 
-  public obtenerProyectoPorId(proyectoId:number) : Observable<Proyecto>{
-    return this.http.get<Proyecto>(`${baseUrl}/${proyectoId}`);
+  //Metodo para obtener proyecto.
+  public obtenerProyectoPorId(proyectoId:any){
+    return this.http.get<Proyecto>(`${baseUrl}/proyecto${proyectoId}`);
   }
-      
+  //Metodo para eliminar proyecto.    
   public eliminarProyecto(proyectoId:any){
     return this.http.delete(`${baseUrl}/proyecto/${proyectoId}`);
   }

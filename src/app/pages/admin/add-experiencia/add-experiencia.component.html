@@ -13,15 +13,20 @@
             class="form-control"
             [(ngModel)]="experiencia.empresa"
             placeholder="Empresa"
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite la empresa "
+            #empresa="ngModel"
           />
         </div>
       </div>
-
+      
       <div class="col">
         <div class="form-outline">
           <input            
             type="text"
             name="cargo"
+            required
             matInput
             id="form6Example2"
             class="form-control"

@@ -11,26 +11,23 @@ export class SkillService {
 
   constructor(private http:HttpClient) { }
   
+  //Metodo para cargar lista de skills.
   public listarSkills(){
     return this.http.get(`${baseUrl}/skill/`);
-  }  
-
-  public detalleSkill(skillId:number):Observable<Skill>{
-    return  this.http.delete<Skill>(`${baseUrl}/skill/${skillId}`);  
-  }
-
+  } 
+  //Metodo para agregar skill.
   public agregarSkill(skill:any){
     return this.http.post(`${baseUrl}/skill/`, skill);
   }
-
-  public actualizarSkill(skillId:number, skill:Skill) : Observable<Object>{
-    return this.http.put(`${baseUrl}/${skillId}`,skill);
+  //Metodo para actualizar skill
+  public actualizarSkill(skill:any){
+    return this.http.put(`${baseUrl}/$/skill/`,skill);
   }
- 
-  public obtenerSkillPorId(skillId:number) : Observable<Skill>{
-    return this.http.get<Skill>(`${baseUrl}/${skillId}`);
+  //Metodo para obtener Skill por id.
+  public obtenerSkillPorId(skillId:any){
+    return this.http.get(`${baseUrl}/skill/${skillId}`);
   }
-      
+   //Metodo para eliminar skill.   
   public eliminarSkill(skillId:any){
     return this.http.delete(`${baseUrl}/skill/${skillId}`);
   }

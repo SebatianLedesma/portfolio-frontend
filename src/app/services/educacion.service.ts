@@ -12,26 +12,23 @@ export class EducacionService {
 
   constructor(private http:HttpClient) {}
 
+  //Metodo para cargar lista de educaciones.
   public listarEducaciones(){
     return this.http.get(`${baseUrl}/educacion/`);
   }
-
-  public detalleEducacion(educacionId:number):Observable<Educacion>{
-    return  this.http.delete<Educacion>(`${baseUrl}/educacion/${educacionId}`);  
-  }
-
+  //Metodo para agregar educacion.
   public agregarEducacion(educacion:any){
     return this.http.post(`${baseUrl}/educacion/`, educacion);
   }
-
-  public actualizarEducacion(educacionId:number, educacion:Educacion) : Observable<Object>{
-    return this.http.put(`${baseUrl}/${educacionId}`,educacion);
+  //Metodo para actualizar Experiencia
+  public actualizarEducacion(educacion:any){
+    return this.http.put(`${baseUrl}/educacion/`,educacion);
   }
- 
-  public obtenerEducacionPorId(educacionId:number) : Observable<Educacion>{
-    return this.http.get<Educacion>(`${baseUrl}/${educacionId}`);
+  //Metodo para obtener o buscar Educacion por id.
+  public obtenerEducacionPorId(educacionId:any){
+    return this.http.get(`${baseUrl}/educacion/${educacionId}`);
   }
-      
+  //Metodo para eliminar educacion.    
   public eliminarEducacion(educacionId:any){
     return this.http.delete(`${baseUrl}/educacion/${educacionId}`);
   }

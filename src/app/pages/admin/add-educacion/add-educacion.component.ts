@@ -27,11 +27,26 @@ export class AddEducacionComponent implements OnInit {
   } 
   
   formSubmit(){
-    if(this.educacion.institucion.trim() == ' ' || this.educacion.institucion == null){
+    if(this.educacion.institucion.trim() == '' || this.educacion.institucion == null){
       this.snack.open("La institucion es requerida!",'',{
         duration:3000
       })
       return ; 
+    }
+    if(this.educacion.titulo.trim() == '' || this.educacion.titulo == null){
+      this.snack.open("El titulo es requerido!",'',{
+        duration:3000
+      })
+      return ; 
+    }
+    if(this.educacion.inicio.trim() == '' || this.educacion.inicio == null){
+      this.snack.open("La fecha de inicio es requerida!",'',{
+        duration:3000
+      })
+      return ; 
+    }
+    if(this.educacion.imagen.trim() == '' || this.educacion.imagen == null){
+      this.educacion.imagen = "../../../../assets/educacionDefault.png";
     }
 
     this.educacionService.agregarEducacion(this.educacion).subscribe(

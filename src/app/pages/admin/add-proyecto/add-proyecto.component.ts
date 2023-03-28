@@ -23,8 +23,20 @@ export class AddProyectoComponent implements OnInit {
   } 
   
   formSubmit(){
-    if(this.proyecto.nombre.trim() == ' ' || this.proyecto.nombre == null){
+    if(this.proyecto.nombre.trim() == '' || this.proyecto.nombre == null){
       this.snack.open("El nombre es requerido!",'',{
+        duration:3000
+      })
+      return ; 
+    }
+    if(this.proyecto.descripcion.trim() == '' || this.proyecto.descripcion == null){
+      this.snack.open("La descripcion es requerida!",'',{
+        duration:3000
+      })
+      return ; 
+    }
+    if(this.proyecto.url.trim() == '' || this.proyecto.url == null){
+      this.snack.open("El link es requerido!",'',{
         duration:3000
       })
       return ; 
