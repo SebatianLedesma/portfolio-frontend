@@ -21,7 +21,7 @@ export class SkillService {
   }
   //Metodo para actualizar skill
   public actualizarSkill(skill:any){
-    return this.http.put(`${baseUrl}/$/skill/`,skill);
+    return this.http.put(`${baseUrl}/skill/`,skill);
   }
   //Metodo para obtener Skill por id.
   public obtenerSkillPorId(skillId:any){

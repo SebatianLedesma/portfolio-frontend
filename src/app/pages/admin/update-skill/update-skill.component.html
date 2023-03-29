@@ -1,1 +1,67 @@
-<p>update-skill works!</p>
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edición de skill</h3>
+    <form *ngIf="skill" (submit)="actualizarDatosSkill()">
+      <div class="form-group">
+        <label>Nombre : </label>
+        <input
+          [(ngModel)]="skill.nombre"
+          type="text"
+          class="form-control"
+          name="nombre"
+          required
+          minlength="3"
+          maxlength="50"
+          placeholder="Digite el nombre "
+          #nombre="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+        >
+          <div *ngIf="nombre.errors!['required']">
+            Digite el nombre del skill por favor
+          </div>
+          <div *ngIf="nombre.errors!['minlength']">
+            El nombre tiene que contener como mínimo 3 caracteres
+          </div>
+          <div *ngIf="nombre.errors!['maxlength']">
+            El nombre tiene que tener como maximo 50 caracteres
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Porcentaje alcanzado: </label>
+        <input
+          [(ngModel)]="skill.porcentaje"
+          type="text"
+          class="form-control"
+          name="porcentaje"
+          placeholder="Digite un porcentaje"
+          required
+          minlength="1"
+          maxlength="3"
+          #porcentaje="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            porcentaje.invalid && (porcentaje.dirty || porcentaje.touched)"
+        >
+          <div *ngIf="porcentaje.errors!['required']">
+            Digite un porcentaje entre 1 y 100 por favor
+          </div>
+          <div *ngIf="porcentaje.errors!['minlength']">
+            El porcentaje debe tener como mínimo 1 caracteres
+          </div>
+          <div *ngIf="porcentaje.errors!['maxlength']">
+            El porcentaje debe tener como maximo 3 caracteres
+          </div>
+        </div>
+      </div>      
+      
+      <div class="container text-center mt20" id="editar">
+        <button class="btn btn-success">Editar</button>
+      </div>
+    </form>
+  </div>
