@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./update-experiencia.component.css'],
 })
 export class UpdateExperienciaComponent implements OnInit {
+  
   experienciaId: any = 0;
   experiencia: any;
   id: number;
@@ -21,8 +22,7 @@ export class UpdateExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.experienciaId = this.route.snapshot.params['experienciaId'];
-    this.experienciaService
-      .obtenerExperienciaPorId(this.experienciaId)
+    this.experienciaService.obtenerExperienciaPorId(this.experienciaId)
       .subscribe(
         (dato: any) => {
           this.experiencia = dato;

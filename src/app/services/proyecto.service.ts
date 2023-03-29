@@ -23,11 +23,11 @@ export class ProyectoService {
   }
   //Metodo para actualizar proyecto
   public actualizarProyecto(proyecto:any){
-    return this.http.put(`${baseUrl}/proyecto}`,proyecto);
+    return this.http.put(`${baseUrl}/proyecto/`, proyecto);
   }
   //Metodo para obtener proyecto.
   public obtenerProyectoPorId(proyectoId:any){
-    return this.http.get<Proyecto>(`${baseUrl}/proyecto${proyectoId}`);
+    return this.http.get(`${baseUrl}/proyecto/${proyectoId}`);
   }
   //Metodo para eliminar proyecto.    
   public eliminarProyecto(proyectoId:any){

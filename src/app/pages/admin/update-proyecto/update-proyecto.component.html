@@ -1,1 +1,95 @@
-<p>update-proyecto works!</p>
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Edición de Proyecto</h3>
+  <form *ngIf="proyecto" (submit)="actualizarDatosProyecto()">
+    <div class="form-group">
+      <label>Nombre : </label>
+      <input
+        [(ngModel)]="proyecto.nombre"
+        type="text"
+        class="form-control"
+        name="nombre"
+        required
+        minlength="3"
+        maxlength="50"
+        placeholder="Digite el nombre "
+        #nombre="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+      >
+        <div *ngIf="nombre.errors!['required']">
+          Digite el nombre del proyecto por favor
+        </div>
+        <div *ngIf="nombre.errors!['minlength']">
+          El nombre tiene que contener como mínimo 3 caracteres
+        </div>
+        <div *ngIf="nombre.errors!['maxlength']">
+          El nombre tiene que tener como maximo 50 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Descripcion : </label>
+      <input
+        [(ngModel)]="proyecto.descripcion"
+        type="text"
+        class="form-control"
+        name="descripcion"
+        placeholder="Digite la descripcion "
+        required
+        minlength="4"
+        maxlength="50"
+        #descripcion="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          descripcion.invalid && (descripcion.dirty || descripcion.touched)"
+      >
+        <div *ngIf="descripcion.errors!['required']">
+          Digite la descripcion del proyecto por favor
+        </div>
+        <div *ngIf="descripcion.errors!['minlength']">
+          El descripcion debe tener como mínimo 4 caracteres
+        </div>
+        <div *ngIf="descripcion.errors!['maxlength']">
+          El descripcion debe tener como maximo 50 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Link : </label>
+      <input
+        [(ngModel)]="proyecto.url"
+        type="text"
+        class="form-control"
+        name="url"
+        required
+        minlength="4"
+        maxlength="200"
+        placeholder="Digite la url "
+        #url="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="url.invalid && (url.dirty || url.touched)"
+      >
+        <div *ngIf="url.errors!['required']">
+          Digite la url del proyecto por favor
+        </div>
+        <div *ngIf="url.errors!['minlength']">
+          La url debe tener como mínimo 4 caracteres
+        </div>
+        <div *ngIf="url.errors!['maxlength']">
+          La url debe tener como maximo 200 caracteres
+        </div>
+      </div>
+    </div>
+    <div class="container text-center mt20" id="editar">
+      <button class="btn btn-success">Editar</button>
+    </div>
+  </form>
+</div>
