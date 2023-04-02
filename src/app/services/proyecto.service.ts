@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Proyecto } from '../Models/Proyecto';
 import baseUrl from './helper';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -10,6 +11,8 @@ import baseUrl from './helper';
 })
 
 export class ProyectoService {
+
+  baseUrl=environment.baseUrl +'proyecto/';
 
   constructor(private http:HttpClient) { }
   

@@ -3,12 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Educacion } from '../Models/Educacion';
 import baseUrl from './helper';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EducacionService {
+
+  baseUrl=environment.baseUrl + 'educacion/';
 
   constructor(private http:HttpClient) {}
 
