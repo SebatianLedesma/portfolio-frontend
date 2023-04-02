@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ExperienciaService {  
   
-  baseUrl=environment.baseUrl+'experiencia/';
+  baseUrl=environment.URL+'experiencia/';
 
   constructor(private http:HttpClient) { }
 

@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 
 export class ProyectoService {
 
-  baseUrl=environment.baseUrl +'proyecto/';
+  baseUrl=environment.URL +'proyecto/';
 
   constructor(private http:HttpClient) { }
   

@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class EducacionService {
 
-  baseUrl=environment.baseUrl + 'educacion/';
+  baseUrl=environment.URL + 'educacion/';
 
   constructor(private http:HttpClient) {}
 
