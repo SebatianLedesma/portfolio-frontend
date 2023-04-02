@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Experiencia } from '../Models/Experiencia';
 import baseUrl from './helper';
 import { environment } from 'src/environments/environment';
 
@@ -10,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ExperienciaService {  
   
-  baseUrl=environment.URL+'experiencia/';
+  baseUrl=environment.URL +'experiencia/';
 
   constructor(private http:HttpClient) { }
 

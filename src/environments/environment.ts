@@ -6,7 +6,7 @@ import baseUrl from "src/app/services/helper";
 
 export const environment = {
   production: false,
-  baseUrl:'https://backend-portfolio-lqye.onrender.com/',
+  URL: 'http://localhost:8080/',
 };
 
 /*
