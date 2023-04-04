@@ -38,6 +38,22 @@ const routes: Routes = [
     pathMatch : 'full'
   },
   {
+    path:'educacion',
+    component:ViewEducacionesComponent
+  },
+  {
+    path:'experiencia',
+    component:ViewExperienciasComponent
+  },
+  {
+    path:'proyecto',
+    component:ViewProyectosComponent
+  },
+  {
+    path:'skill',
+    component:ViewSkillsComponent
+  },
+  {
     path: 'add-experiencia',
     component: AddExperienciaComponent
   },
