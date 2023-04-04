@@ -82,7 +82,11 @@ const routes: Routes = [
       {
         path:'profile',
         component:ProfileComponent
-      },     
+      }, 
+      {
+        path:'experiencia',
+        component:ViewExperienciasComponent
+      },    
 
     ]
   },
@@ -92,7 +96,10 @@ const routes: Routes = [
     pathMatch:'full',
     canActivate:[NormalGuard],
     children:[
-
+      {
+        path:'experiencia',
+        component:ViewExperienciasComponent
+      },
     ]
   },
   {

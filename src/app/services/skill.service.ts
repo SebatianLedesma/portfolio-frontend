@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Skill } from '../Models/Skill';
 import baseUrl from './helper';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
+
+ //baseUrl=environment.URL +'proyecto/';
 
   constructor(private http:HttpClient) { }
   

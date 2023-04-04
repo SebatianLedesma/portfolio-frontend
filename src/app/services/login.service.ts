@@ -2,11 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import baserUrl from './helper';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+
+  //baseUrl=environment.URL +'login/';
 
   public loginStatusSubjec = new Subject<boolean>();
 
