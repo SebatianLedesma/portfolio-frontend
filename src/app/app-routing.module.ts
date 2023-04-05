@@ -70,10 +70,6 @@ const routes: Routes = [
     component: AddEducacionComponent
   },
   {
-    path:'experiencia',
-    component:ViewExperienciasComponent
-  },
-  {
     path: 'experiencia/:experienciaId',
     component: UpdateExperienciaComponent
   },
@@ -102,7 +98,19 @@ const routes: Routes = [
       {
         path:'experiencia',
         component:ViewExperienciasComponent
-      },    
+      },
+      {
+        path:'proyectos',
+        component:ViewProyectosComponent
+      },  
+      {
+        path:'educacion',
+        component:ViewEducacionesComponent
+      },
+      {
+        path:'skill',
+        component:ViewSkillsComponent
+      },            
 
     ]
   },
@@ -115,6 +123,18 @@ const routes: Routes = [
       {
         path:'experiencia',
         component:ViewExperienciasComponent
+      },
+      {
+        path:'educacion',
+        component:ViewEducacionesComponent
+      },
+      {
+        path:'proyecto',
+        component:ViewProyectosComponent
+      },
+      {
+        path:'skill',
+        component:ViewSkillsComponent
       },
     ]
   },

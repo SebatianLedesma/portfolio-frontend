@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class SkillService {
 
- baseUrl=environment.URL +'proyecto/';
+ baseUrl=environment.URL;
 
   constructor(private http:HttpClient) { }
   

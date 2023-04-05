@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
-  baseUrl=environment.URL +'login/';
+  baseUrl=environment.URL;
 
   public loginStatusSubjec = new Subject<boolean>();
 
