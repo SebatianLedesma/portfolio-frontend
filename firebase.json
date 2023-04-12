@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/portfolio-ledesma",
+    "public": "dist\\sistema-examenes-frontend",
     "ignore": [
       "firebase.json",
       "**/.*",
