@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import baseUrl from './helper';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,22 +13,22 @@ export class ExperienciaService {
 
   //Metodo para cargar lista de experiencias.  
   public listarExperiencias(){
-    return this.http.get(`${baseUrl}/experiencia/`);
+    return this.http.get(this.baseUrl + `experiencia/`);
   }
   //Metodo para agregar Experiencia.
   public agregarExperiencia(experiencia:any){
-    return this.http.post(`${baseUrl}/experiencia/`, experiencia);
+    return this.http.post(this.baseUrl + `experiencia/`, experiencia);
   }
   //Metodo para actualizar Experiencia
   public actualizarExperiencia(experiencia:any){
-    return this.http.put(`${baseUrl}/experiencia/`, experiencia);
+    return this.http.put(this.baseUrl + `experiencia/`, experiencia);
   }
   //Metodo para obtener o buscar Experiencia.
   public obtenerExperienciaPorId(experienciaId:any){
-    return this.http.get(`${baseUrl}/experiencia/${experienciaId}`);
+    return this.http.get(this.baseUrl + `experiencia/${experienciaId}`);
   }    
   //Metodo para eliminar Experiencia.
   public eliminarExperiencia(experienciaId:any){
-    return this.http.delete(`${baseUrl}/experiencia/${experienciaId}`);
+    return this.http.delete(this.baseUrl + `experiencia/${experienciaId}`);
   }
 }

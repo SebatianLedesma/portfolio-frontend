@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import baserUrl from './helper';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -15,10 +14,10 @@ export class UserService {
     constructor(private httpClient: HttpClient) { }
    
     public listarUsuarios(){
-      return this.httpClient.get(`${baserUrl}/usuarios/`);
+      return this.httpClient.get(this.baseUrl + `usuarios/`);
     }
     public añadirUsuario(user:any){
-      return this.httpClient.post(`${baserUrl}/usuarios/`,user);
+      return this.httpClient.post(this.baseUrl + `usuarios/`,user);
     }
 
 }
