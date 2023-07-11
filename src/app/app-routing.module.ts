@@ -110,7 +110,15 @@ const routes: Routes = [
       {
         path:'skill',
         component:ViewSkillsComponent
-      },            
+      },
+      {
+        path: 'add-educacion',
+        component: AddEducacionComponent
+      },
+      {
+       path: 'add-skill',
+       component: AddSkillComponent
+      },
 
     ]
   },
